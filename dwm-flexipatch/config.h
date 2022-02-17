@@ -1,3 +1,4 @@
+#include <X11/XF86keysym.h>
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -360,6 +361,10 @@ static Sp scratchpads[] = {
    {"spterm",      spcmd1},
 };
 #endif // SCRATCHPADS_PATCH
+
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
 /* Tags
  * In a traditional dwm the number of tags in use can be changed simply by changing the number
@@ -850,7 +855,11 @@ static const char* touchpadcmd[] = {"/home/rathel/.local/share/dwm/toggletouchpa
 
 static Key keys[] = {
 	/* modifier                     key            function                argument */
-    {MODKEY|ControlMask, XK_t, spawn, {.v = touchpadcmd } },
+    { MODKEY|ControlMask,           XK_t,          spawn,                  {.v = touchpadcmd } },
+	{                  0, XF86XK_AudioLowerVolume, spawn,                  {.v = downvol} },
+	{                  0, XF86XK_AudioMute,        spawn,                  {.v = mutevol} },
+	{                  0, XF86XK_AudioRaiseVolume, spawn,                  {.v = upvol} },
+
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
