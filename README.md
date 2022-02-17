@@ -1,4 +1,4 @@
-# My DWM Build
+# My [DWM](https://dwm.suckless.org/) Build
 Original patches:
 * [dwm-flexipatch](https://github.com/bakkeby/dwm-flexipatch) 
 * [st-flexipatch](https://github.com/bakkeby/st-flexipatch)
