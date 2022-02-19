@@ -8,13 +8,12 @@ static const Block blocks[] = {
 	{"", "/home/rathel/.local/share/dwm/weather.sh", 3600, 0},
 	{"", "/home/rathel/.local/share/dwm/touchpad.sh", 10, 0},
 	// {"", "/home/rathel/.local/share/dwm/wifi.sh", 30, 0},
-	{"", "/home/rathel/.local/share/dwm/volume.sh", 30, 0},
-	{"", "/home/rathel/.local/share/dwm/brightness.py", 30, 0},
-	{"", "/home/rathel/.local/share/dwm/batt.sh", 30, 0},
+	{"", "/home/rathel/.local/share/dwm/volume.sh", 10, 0},
+	{"", "/home/rathel/.local/share/dwm/brightness.py", 10, 0},
+	{"", "/home/rathel/.local/share/dwm/batt.sh", 10, 0},
 	{"", "/home/rathel/.local/share/dwm/diskspace.sh",	60,		0},
 	{" ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
-
-	{"", "date '+%b %d (%a) %R'",					5,		0},
+	{"", "date '+%b %d (%a) %R'",					60,		0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
