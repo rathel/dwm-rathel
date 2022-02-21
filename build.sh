@@ -3,17 +3,13 @@ set -e
 
 D=$(pwd)
 DWM=$D/dwm-flexipatch
-ST=$D/st-flexipatch
+#ST=$D/st-flexipatch
 DWMBLOCKS=$D/dwmblocks
 DWMSCRIPTS=$D/dwm-scripts
 
-DIRECTORIES=( "$DWM" "$ST" "$DWMBLOCKS" )
+DIRECTORIES=( "$DWM" "$DWMBLOCKS" )
 
 build(){
-    if [ ! make ];then
-        echo "ERORR"
-        exit 1
-    else
         echo "Running make..."
         echo ""
         make
@@ -21,7 +17,6 @@ build(){
         echo "Running make clean install..."
         echo ""
         sudo make clean install
-    fi
 }
 
 for bdir in "${DIRECTORIES[@]}";do
