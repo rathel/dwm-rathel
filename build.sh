@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 D=$(pwd)
 DWM=$D/dwm-flexipatch
