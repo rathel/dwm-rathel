@@ -9,3 +9,5 @@ dwm-flexipatch/dwm
 dwm-flexipatch/*.o
 st-flexipatch/st
 st-flexipatch/*.o
+slock-flexipatch/*.o
+slock-flexipatch/slock

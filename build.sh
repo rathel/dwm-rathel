@@ -3,11 +3,12 @@ set -e
 
 D=$(pwd)
 DWM=$D/dwm-flexipatch
+SLOCK=$D/slock-flexipatch
 #ST=$D/st-flexipatch
 DWMBLOCKS=$D/dwmblocks
 DWMSCRIPTS=$D/dwm-scripts
 
-DIRECTORIES=( "$DWM" "$DWMBLOCKS" )
+DIRECTORIES=( "$DWM" "$DWMBLOCKS" "$SLOCK" )
 
 build(){
         echo "Running make..."
@@ -37,8 +38,11 @@ else
     cp -vf $DWMSCRIPTS/* $HOME/.local/share/dwm/
 fi
 
-if [ ! -f /usr/share/xsessions/dwm.desktop ];then
+if [ ! -f /usr/share/xsessions ];then
+    mkdir -p /usr/share/xsessions
     echo "Copying desktop file..."
+    sudo cp -vf $D/dwm.desktop /usr/share/xsessions/dwm.desktop
+elif [ ! -f /usr/share/xsessions/dwm.desktop ];then
     sudo cp -vf $D/dwm.desktop /usr/share/xsessions/dwm.desktop
 fi
 
@@ -50,6 +54,12 @@ if [ ! -d $HOME/.config/kitty ];then
 else
     echo "Copying Kitty config..."
     cp -vf $D/kitty.conf $HOME/.config/kitty/
+fi
+
+if [[ $(fc-list) != *Jet* ]];then
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip -O /tmp/JetBrainsMono.zip
+    unzip /tmp/JetBrainsMono.zip -d ~/.fonts
+    fc-cache
 fi
 
 echo ""
