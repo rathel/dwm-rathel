@@ -15,4 +15,5 @@ xinput disable "ETPS/2 Elantech Touchpad" &
 steam_chat &
 gmail &
 redshift &
+xautolock -locker slock &
 /usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 &
