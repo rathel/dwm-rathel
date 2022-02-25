@@ -10,7 +10,7 @@ DWMSCRIPTS=$D/dwm-scripts
 
 DIRECTORIES=( "$DWM" "$DWMBLOCKS" "$SLOCK" )
 
-build(){
+BUILD(){
         echo "Running make..."
         echo ""
         make
@@ -20,9 +20,17 @@ build(){
         sudo make clean install
 }
 
+#REPLACE(){
+#        for x in $(ls *.TMP);do
+#            echo "Replacing Variables in $x"
+#            sed "s#{{HOME}}#$HOME#g" $x > "$(basename $x .TMP)"
+#        done
+#}
+
 for bdir in "${DIRECTORIES[@]}";do
     cd $bdir
-    build
+#    REPLACE
+    BUILD
 done
 
 if [ ! -d $HOME/.local/share/dwm ];then

@@ -395,7 +395,7 @@ static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "togg
  */
 static char *tagicons[][NUMTAGS] = {
 // [DEFAULT_TAGS]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
-	[DEFAULT_TAGS]        = { "", "", "", "", "", "6", "7", "", "9" },
+	[DEFAULT_TAGS]        = { "", "", "", "", "", "6", "7", "", "ﰩ" },
 	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
 	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
 };
@@ -447,10 +447,11 @@ static const Rule rules[] = {
 	RULE(.class = "firefox-aurora", .tags = 1 << 7)
 	RULE(.class = "Emacs", .tags = 1 << 1)
 	RULE(.class = "Steam", .tags = 1 << 2)
-	RULE(.class = "feedly-nativefier-6cd7a6", .tags = 1 << 8)
-	RULE(.class = "steam-chat-nativefier-d6735f", .tags = 1 << 8)
-	RULE(.class = "gmail-nativefier-0e00ed", .tags = 1 << 8)
-	RULE(.class = "tweetdeck-nativefier-4d2c61", .tags = 1 << 8)
+	// RULE(.class = "feedly-nativefier-6cd7a6", .tags = 1 << 8)
+	// RULE(.class = "steam-chat-nativefier-d6735f", .tags = 1 << 8)
+	// RULE(.class = "gmail-nativefier-0e00ed", .tags = 1 << 8)
+	// RULE(.class = "tweetdeck-nativefier-4d2c61", .tags = 1 << 8)
+	RULE(.class = "Ferdi", .tags = 1 << 8)
 	RULE(.class = "mpv", .tags = ~0, .isfloating = 1, .floatpos = "-1x -1y 1280W 720H")
 	RULE(.class = "Dunst", .tags = ~0, .isfloating = 1)
 	#if SCRATCHPADS_PATCH
