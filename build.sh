@@ -14,6 +14,18 @@ if ! [ "$(command -v unzip)" ];then
     echo "Needs unzip"
     exit 1
 fi
+if ! [ "$(find /usr/include/X11 -iname "xft.h")" ];then
+    echo "Needs libXft"
+    exit 1
+fi
+if ! [ "$(find /usr/include/X11 -iname "xinerama.h")" ];then
+    echo "Needs libXinerama"
+    exit 1
+fi
+if ! [ "$(command -v kitty)" ];then
+    echo "Needs Kitty Terminal"
+    exit 1
+fi
 
 BUILD(){
         echo "Running make..."
