@@ -10,7 +10,7 @@ DWMSCRIPTS=$D/dwm-scripts
 
 DIRECTORIES=( "$DWM" "$DWMBLOCKS" "$SLOCK" )
 
-if  ! command -v unzip ;then
+if ! command -v unzip;then
     echo "Needs unzip"
 fi
 
@@ -69,7 +69,7 @@ else
 fi
 
 if [[ $(fc-list) != *Jet* ]];then
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip -O /tmp/JetBrainsMono.zip
+    wget -c https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip -O /tmp/JetBrainsMono.zip
     unzip /tmp/JetBrainsMono.zip -d $HOME/.fonts
     fc-cache
 fi
