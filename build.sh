@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 D=$(pwd)
 DWM=$D/dwm-flexipatch
@@ -9,6 +9,10 @@ DWMBLOCKS=$D/dwmblocks
 DWMSCRIPTS=$D/dwm-scripts
 
 DIRECTORIES=( "$DWM" "$DWMBLOCKS" "$SLOCK" )
+
+if [ ! command -v unzip ];then
+    echo "Needs unzip"
+fi
 
 BUILD(){
         echo "Running make..."
