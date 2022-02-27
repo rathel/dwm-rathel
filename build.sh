@@ -47,7 +47,7 @@ else
 fi
 
 if [ ! -d /usr/share/xsessions ];then
-    mkdir -p /usr/share/xsessions
+    sudo mkdir -p /usr/share/xsessions
     echo "Copying desktop file..."
     sudo cp -vf $D/dwm.desktop /usr/share/xsessions/dwm.desktop
 elif [ ! -f /usr/share/xsessions/dwm.desktop ];then
