@@ -10,7 +10,7 @@ DWMSCRIPTS=$D/dwm-scripts
 
 DIRECTORIES=( "$DWM" "$DWMBLOCKS" "$SLOCK" )
 
-if [ ! command -v unzip ];then
+if  ! command -v unzip ;then
     echo "Needs unzip"
 fi
 
