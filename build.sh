@@ -26,6 +26,10 @@ if ! [ "$(command -v kitty)" ];then
     echo "Needs Kitty Terminal"
     exit 1
 fi
+if ! [ "$(command -v dunst)" ];then
+    echo "Needs Kitty Terminal"
+    exit 1
+fi
 
 BUILD(){
         echo "Running make..."

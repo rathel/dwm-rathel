@@ -18,3 +18,5 @@ redshift &
 xautolock -locker slock &
 /usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 &
 Ferdi &
+bluetoothctl power on &
+pulseaudio &
