@@ -7,4 +7,4 @@ Original patches:
 * [wallpaper](https://wallhaven.cc/w/6k28zl)
 * [font: JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip)
 
-![](202202161732.png)
+![](202203011620.png)
