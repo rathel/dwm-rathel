@@ -445,6 +445,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "Gimp", .tags = 1 << 4)
 	RULE(.class = "firefox-aurora", .tags = 1 << 7)
+	RULE(.class = "firefoxdeveloperedition", .tags = 1 << 7)
 	RULE(.class = "Emacs", .tags = 1 << 1)
 	RULE(.class = "Steam", .tags = 1 << 2)
 	// RULE(.class = "feedly-nativefier-6cd7a6", .tags = 1 << 8)
@@ -453,6 +454,7 @@ static const Rule rules[] = {
 	// RULE(.class = "tweetdeck-nativefier-4d2c61", .tags = 1 << 8)
 	RULE(.class = "Ferdi", .tags = 1 << 8)
 	RULE(.class = "mpv", .tags = ~0, .isfloating = 1, .floatpos = "-1x -1y 1280W 720H")
+	RULE(.class = "ksnip", .isfloating = 1)
 	RULE(.class = "Dunst", .tags = ~0, .isfloating = 1)
 	#if SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .tags = SPTAG(0), .isfloating = 1)
