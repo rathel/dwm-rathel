@@ -29,9 +29,6 @@ unlock()            { _lock u; }   # drop a lock
 
 ### BEGIN OF SCRIPT ###
 
-# Simplest example is avoiding running multiple instances of script.
-exlock_now || exit 1
-
 xrdb -merge ~/.Xresources &
 dwmblocks &
 #/home/rathel/.local/share/dwm/statusbar.sh &
@@ -48,7 +45,10 @@ xinput disable "ETPS/2 Elantech Touchpad" &
 #gmail &
 redshift &
 xautolock -locker slock &
-/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 &
-~/.local/bin/Ferdi &
+/usr/lib/polkit-kde-authentication-agent-1 &
+$HOME/.local/bin/Ferdi &
 #bluetoothctl power on &
 pulseaudio &
+
+# Simplest example is avoiding running multiple instances of script.
+exlock_now || exit 1
