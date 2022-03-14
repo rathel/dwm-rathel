@@ -4,11 +4,14 @@ set -euo pipefail
 D=$(pwd)
 DWM=$D/dwm-flexipatch
 SLOCK=$D/slock-flexipatch
-#ST=$D/st-flexipatch
+ST=$D/st-flexipatch
 DWMBLOCKS=$D/dwmblocks
 DWMSCRIPTS=$D/dwm-scripts
 
-DIRECTORIES=( "$DWM" "$DWMBLOCKS" "$SLOCK" )
+DIRECTORIES=( "$DWM"
+              "$DWMBLOCKS"
+              "$SLOCK"
+              "$ST" )
 
 if ! [ "$(command -v unzip)" ];then
     echo "Needs unzip"
@@ -22,10 +25,10 @@ if ! [ "$(find /usr/include/X11 -iname "xinerama.h")" ];then
     echo "Needs libXinerama"
     exit 1
 fi
-if ! [ "$(command -v kitty)" ];then
-    echo "Needs Kitty Terminal"
-    exit 1
-fi
+#if ! [ "$(command -v kitty)" ];then
+#    echo "Needs Kitty Terminal"
+#    exit 1
+#fi
 #if ! [ "$(command -v dunst)" ];then
 #    echo "Needs dunst"
 #    exit 1

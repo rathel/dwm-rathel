@@ -355,7 +355,7 @@ static const char *const autostart[] = {
 #endif // COOL_AUTOSTART_PATCH
 
 #if SCRATCHPADS_PATCH
-const char *spcmd1[] = {"kitty", "--class", "spterm", "-o", "initial_window_height=120", "-o", "initial_wndow_width=34", NULL };
+const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
 static Sp scratchpads[] = {
    /* name          cmd  */
    {"spterm",      spcmd1},
@@ -446,6 +446,9 @@ static const Rule rules[] = {
 	RULE(.class = "Gimp", .tags = 1 << 4)
 	RULE(.class = "firefox-aurora", .tags = 1 << 7)
 	RULE(.class = "firefoxdeveloperedition", .tags = 1 << 7)
+	RULE(.class = "vmplayer", .tags = 1 << 3)
+	RULE(.class = "virt-manager", .tags = 1 << 3)
+	RULE(.class = "parsecd", .tags = 1 << 2)
 	RULE(.class = "Emacs", .tags = 1 << 1)
 	RULE(.class = "Steam", .tags = 1 << 2)
 	// RULE(.class = "feedly-nativefier-6cd7a6", .tags = 1 << 8)
@@ -830,7 +833,7 @@ static const char *dmenucmd[] = {
 	#endif // BAR_DMENUMATCHTOP_PATCH
 	NULL
 };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
