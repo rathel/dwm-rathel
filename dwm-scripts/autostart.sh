@@ -34,7 +34,8 @@ dwmblocks &
 #/home/rathel/.local/share/dwm/statusbar.sh &
 wal -R &
 firefox-developer-edition &
-kitty &
+#kitty &
+st
 numlockx &
 #compton &
 #nm-applet &
