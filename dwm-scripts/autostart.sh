@@ -35,7 +35,7 @@ dwmblocks &
 wal -R &
 firefox-developer-edition &
 #kitty &
-st
+st &
 numlockx &
 #compton &
 #nm-applet &
