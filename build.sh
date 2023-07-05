@@ -25,6 +25,11 @@ if ! [ "$(find /usr/include/X11 -iname "xinerama.h")" ];then
     echo "Needs libXinerama"
     exit 1
 fi
+if ! [ "$(find /usr/include/X11 -iname "xrandr.h")" ];then
+    echo "Needs libXrandr"
+    exit 1
+fi
+#
 #if ! [ "$(command -v kitty)" ];then
 #    echo "Needs Kitty Terminal"
 #    exit 1
