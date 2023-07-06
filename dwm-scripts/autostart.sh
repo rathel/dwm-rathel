@@ -38,6 +38,7 @@ firefox-developer-edition &
 st &
 numlockx &
 #compton &
+picom &
 #nm-applet &
 emacsclient -c -a emacs &
 #blueman-applet &
