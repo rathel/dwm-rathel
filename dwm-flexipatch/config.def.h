@@ -1,3 +1,4 @@
+#include <X11/XF86keysym.h>
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -127,52 +128,52 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 10";
 #else
-static const char *fonts[]               = { "monospace:size=10" };
+static const char *fonts[]               = { "JetBrainsMono Nerd Font:size=12" };
 #endif // BAR_PANGO_PATCH
-static const char dmenufont[]            = "monospace:size=10";
+static const char dmenufont[]            = "JetBrainsMono Nerd Font:size=12";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
 #if BAR_FLEXWINTITLE_PATCH
 #endif // BAR_FLEXWINTITLE_PATCH
-static char normfgcolor[]                = "#bbbbbb";
-static char normbgcolor[]                = "#222222";
-static char normbordercolor[]            = "#444444";
+static char normfgcolor[]                = "#dacbcd";
+static char normbgcolor[]                = "#0d0a09";
+static char normbordercolor[]            = "#988e8f";
 static char normfloatcolor[]             = "#db8fd9";
 
-static char selfgcolor[]                 = "#eeeeee";
-static char selbgcolor[]                 = "#005577";
-static char selbordercolor[]             = "#005577";
+static char selfgcolor[]                 = "#dacbcd";
+static char selbgcolor[]                 = "#C54B37";
+static char selbordercolor[]             = "#dacbcd";
 static char selfloatcolor[]              = "#005577";
 
-static char titlenormfgcolor[]           = "#bbbbbb";
-static char titlenormbgcolor[]           = "#222222";
-static char titlenormbordercolor[]       = "#444444";
+static char titlenormfgcolor[]           = "#dacbcd";
+static char titlenormbgcolor[]           = "#0d0a09";
+static char titlenormbordercolor[]       = "#988e8f";
 static char titlenormfloatcolor[]        = "#db8fd9";
 
-static char titleselfgcolor[]            = "#eeeeee";
-static char titleselbgcolor[]            = "#005577";
-static char titleselbordercolor[]        = "#005577";
+static char titleselfgcolor[]            = "#dacbcd";
+static char titleselbgcolor[]            = "#C54B37";
+static char titleselbordercolor[]        = "#dacbcd";
 static char titleselfloatcolor[]         = "#005577";
 
-static char tagsnormfgcolor[]            = "#bbbbbb";
-static char tagsnormbgcolor[]            = "#222222";
-static char tagsnormbordercolor[]        = "#444444";
+static char tagsnormfgcolor[]            = "#dacbcd";
+static char tagsnormbgcolor[]            = "#0d0a09";
+static char tagsnormbordercolor[]        = "#988e8f";
 static char tagsnormfloatcolor[]         = "#db8fd9";
 
-static char tagsselfgcolor[]             = "#eeeeee";
-static char tagsselbgcolor[]             = "#005577";
-static char tagsselbordercolor[]         = "#005577";
-static char tagsselfloatcolor[]          = "#005577";
+static char tagsselfgcolor[]             = "#dacbcd";
+static char tagsselbgcolor[]             = "#0d0a09";
+static char tagsselbordercolor[]         = "#988e8f";
+static char tagsselfloatcolor[]          = "#db8fd9";
 
 static char hidnormfgcolor[]             = "#005577";
 static char hidselfgcolor[]              = "#227799";
 static char hidnormbgcolor[]             = "#222222";
 static char hidselbgcolor[]              = "#222222";
 
-static char urgfgcolor[]                 = "#bbbbbb";
-static char urgbgcolor[]                 = "#222222";
-static char urgbordercolor[]             = "#ff0000";
+static char urgfgcolor[]                 = "#dacbcd";
+static char urgbgcolor[]                 = "#9B2622";
+static char urgbordercolor[]             = "#9B2622";
 static char urgfloatcolor[]              = "#db8fd9";
 
 #if BAR_FLEXWINTITLE_PATCH
@@ -361,6 +362,10 @@ static Sp scratchpads[] = {
 };
 #endif // SCRATCHPADS_PATCH
 
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+
 /* Tags
  * In a traditional dwm the number of tags in use can be changed simply by changing the number
  * of strings in the tags array. This build does things a bit different which has some added
@@ -389,7 +394,8 @@ static Sp scratchpads[] = {
  * them. This works seamlessly with alternative tags and alttagsdecoration patches.
  */
 static char *tagicons[][NUMTAGS] = {
-	[DEFAULT_TAGS]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+// [DEFAULT_TAGS]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+	[DEFAULT_TAGS]        = { "", "", "", "", "", "6", "7", "", "ﰩ" },
 	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
 	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
 };
@@ -438,7 +444,21 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "Firefox", .tags = 1 << 7)
+	RULE(.class = "firefox-aurora", .tags = 1 << 7)
+	RULE(.class = "firefoxdeveloperedition", .tags = 1 << 7)
+	RULE(.class = "vmplayer", .tags = 1 << 3)
+	RULE(.class = "virt-manager", .tags = 1 << 3)
+	RULE(.class = "parsecd", .tags = 1 << 2)
+	RULE(.class = "Emacs", .tags = 1 << 1)
+	RULE(.class = "Steam", .tags = 1 << 2)
+	// RULE(.class = "feedly-nativefier-6cd7a6", .tags = 1 << 8)
+	// RULE(.class = "steam-chat-nativefier-d6735f", .tags = 1 << 8)
+	// RULE(.class = "gmail-nativefier-0e00ed", .tags = 1 << 8)
+	// RULE(.class = "tweetdeck-nativefier-4d2c61", .tags = 1 << 8)
+	RULE(.class = "Ferdi", .tags = 1 << 8)
+	RULE(.class = "mpv", .tags = ~0, .isfloating = 1, .floatpos = "-1x -1y 1280W 720H")
+	RULE(.class = "ksnip", .isfloating = 1)
+	RULE(.class = "Dunst", .tags = ~0, .isfloating = 1)
 	#if SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .tags = SPTAG(0), .isfloating = 1)
 	#endif // SCRATCHPADS_PATCH
@@ -713,7 +733,7 @@ static const char *xkb_layouts[]  = {
 #endif // XKB_PATCH
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #if COMBO_PATCH && SWAPTAGS_PATCH && TAGOTHERMONITOR_PATCH
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
@@ -838,9 +858,15 @@ static Key on_empty_keys[] = {
 	{ 0,        XK_f,          spawn,                  {.v = firefoxcmd } },
 };
 #endif // ON_EMPTY_KEYS_PATCH
+static const char* touchpadcmd[] = {"/home/rathel/.local/share/dwm/toggletouchpad.sh", NULL};
 
 static Key keys[] = {
 	/* modifier                     key            function                argument */
+    { MODKEY|ControlMask,           XK_t,          spawn,                  {.v = touchpadcmd } },
+	{                  0, XF86XK_AudioLowerVolume, spawn,                  {.v = downvol} },
+	{                  0, XF86XK_AudioMute,        spawn,                  {.v = mutevol} },
+	{                  0, XF86XK_AudioRaiseVolume, spawn,                  {.v = upvol} },
+
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH

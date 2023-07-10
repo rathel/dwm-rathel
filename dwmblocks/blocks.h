@@ -12,7 +12,7 @@ static const Block blocks[] = {
 	{"", "/home/rathel/.local/share/dwm/brightness.py", 10, 0},
 	{"", "/home/rathel/.local/share/dwm/batt.sh", 10, 0},
 	{"", "/home/rathel/.local/share/dwm/diskspace.sh",	60,		0},
-	{" ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
+	{"", "/home/rathel/.local/share/dwm/memory.sh",	30,		0},
 	{"", "date '+%b %d (%a) %R'",					60,		0},
 };
 

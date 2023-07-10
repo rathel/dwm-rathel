@@ -12,6 +12,9 @@ DIRECTORIES=( "$DWM"
               "$DWMBLOCKS"
               "$SLOCK"
               "$ST" )
+FILESTOREMOVE=( "blocks.h"
+		"patches.h"
+		"config.h" )
 
 if ! [ "$(command -v unzip)" ];then
     echo "Needs unzip"
@@ -48,6 +51,14 @@ BUILD(){
         echo ""
         sudo make clean install
 }
+REMOVEFILES(){
+	set +eou pipefail
+	for files in "${FILESTOREMOVE[@]}";do
+		rm -v $files
+	done
+	set -eou pipefail
+
+}
 
 #REPLACE(){
 #        for x in $(ls *.TMP);do
@@ -58,6 +69,7 @@ BUILD(){
 
 for bdir in "${DIRECTORIES[@]}";do
     cd $bdir
+    REMOVEFILES
 #    REPLACE
     BUILD
 done
