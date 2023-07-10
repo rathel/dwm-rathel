@@ -72,7 +72,7 @@ if [ ! -d $HOME/.local/share/dwm ];then
 else
     echo ""
     echo "Copying Scripts..."
-    cp -vf $DWMSCRIPTS/* $HOME/.local/share/dwm/
+    cp -v $DWMSCRIPTS/* $HOME/.local/share/dwm/
 fi
 
 if [ ! -d /usr/share/xsessions ];then

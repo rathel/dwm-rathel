@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-WEATHER="$(curl "wttr.in/Elizabeth,Co?format=%C%20%t&u")"
+WEATHER="$(curl "wttr.in/Elizabeth+Colorado?format=%C%20%t&u")"
 RES=$?
 UNKNOWN="$WEATHER | cut -d' ' -f1"
 

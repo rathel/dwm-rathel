@@ -32,8 +32,8 @@ unlock()            { _lock u; }   # drop a lock
 xrdb -merge ~/.Xresources &
 dwmblocks &
 #/home/rathel/.local/share/dwm/statusbar.sh &
-wal -R &
-firefox-developer-edition &
+#wal -R &
+#firefox-developer-edition &
 #kitty &
 st &
 numlockx &
@@ -42,15 +42,19 @@ picom &
 #nm-applet &
 emacsclient -c -a emacs &
 #blueman-applet &
-xinput disable "ETPS/2 Elantech Touchpad" &
+#xinput disable "ETPS/2 Elantech Touchpad" &
 #steam_chat &
 #gmail &
 redshift &
 xautolock -locker slock &
 /usr/lib/polkit-kde-authentication-agent-1 &
-$HOME/.local/bin/Ferdi &
+#$HOME/.local/bin/Ferdi &
 #bluetoothctl power on &
 pulseaudio &
+steam &
+lutris &
+spotify &
+$HOME/.screenlayout/layout.sh &
 
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1

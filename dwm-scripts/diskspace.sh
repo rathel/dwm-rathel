@@ -7,5 +7,5 @@ RES="$?"
 if test "$RES" != "0";then
     echo ""
 else
-    echo "" "$USED""/""$TOTAL"
+    echo "" "$USED""/""$TOTAL"
 fi
