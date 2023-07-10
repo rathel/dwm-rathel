@@ -40,7 +40,7 @@ numlockx &
 #compton &
 picom &
 #nm-applet &
-emacsclient -c -a emacs &
+#emacsclient -c -a emacs &
 #blueman-applet &
 #xinput disable "ETPS/2 Elantech Touchpad" &
 #steam_chat &
@@ -50,6 +50,7 @@ xautolock -locker slock &
 /usr/lib/polkit-kde-authentication-agent-1 &
 #$HOME/.local/bin/Ferdi &
 #bluetoothctl power on &
+variety &
 pulseaudio &
 steam &
 lutris &
