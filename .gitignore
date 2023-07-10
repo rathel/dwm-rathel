@@ -3,6 +3,7 @@
 *.log
 tmp/
 dwmblocks/dwmblocks
+dwmblocks/dwmblocks.h
 dwmblocks/*.gch
 dwmblocks/*.o
 dwm-flexipatch/dwm
