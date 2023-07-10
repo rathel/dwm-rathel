@@ -7,8 +7,14 @@ dwmblocks/dwmblocks.h
 dwmblocks/*.gch
 dwmblocks/*.o
 dwm-flexipatch/dwm
+dwm-flexipatch/patches.h
+dwm-flexipatch/config.h
 dwm-flexipatch/*.o
 st-flexipatch/st
+st-flexipatch/patches.h
+st-flexipatch/config.h
 st-flexipatch/*.o
 slock-flexipatch/*.o
+slock-flexipatch/patches.h
+slock-flexipatch/config.h
 slock-flexipatch/slock
