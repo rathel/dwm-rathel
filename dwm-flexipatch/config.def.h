@@ -444,7 +444,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "firefox-aurora", .tags = 1 << 7)
+	RULE(.class = "firefox", .tags = 1 << 7)
 	RULE(.class = "firefoxdeveloperedition", .tags = 1 << 7)
 	RULE(.class = "vmplayer", .tags = 1 << 3)
 	RULE(.class = "virt-manager", .tags = 1 << 3)
