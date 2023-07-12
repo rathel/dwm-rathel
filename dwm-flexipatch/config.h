@@ -128,9 +128,9 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 10";
 #else
-static const char *fonts[]               = { "JetBrainsMono Nerd Font:size=12" };
+static const char *fonts[]               = { "Iosevka Nerd Font:size=12" };
 #endif // BAR_PANGO_PATCH
-static const char dmenufont[]            = "JetBrainsMono Nerd Font:size=12";
+static const char dmenufont[]            = "Iosevka Nerd Font:size=12";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
@@ -444,7 +444,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "firefox-aurora", .tags = 1 << 7)
+	RULE(.class = "firefox", .tags = 1 << 7)
 	RULE(.class = "firefoxdeveloperedition", .tags = 1 << 7)
 	RULE(.class = "vmplayer", .tags = 1 << 3)
 	RULE(.class = "virt-manager", .tags = 1 << 3)

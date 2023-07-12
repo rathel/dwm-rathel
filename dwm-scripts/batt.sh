@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 
-STATUS=$(cat /sys/class/power_supply/BAT1/status)
-BATT=$(cat /sys/class/power_supply/BAT1/capacity)
+STATUS=$(cat /sys/class/power_supply/BAT0/status)
+BATT=$(cat /sys/class/power_supply/BAT0/capacity)
 
 if [ "$STATUS" = "Discharging" ]; then
     if [ "$BATT" -lt 101 ]; then
