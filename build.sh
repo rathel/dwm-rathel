@@ -7,11 +7,14 @@ SLOCK=$D/slock-flexipatch
 ST=$D/st-flexipatch
 DWMBLOCKS=$D/dwmblocks
 DWMSCRIPTS=$D/dwm-scripts
+TABBED=$D/tabbed-flexipatch
 
 DIRECTORIES=( "$DWM"
               "$DWMBLOCKS"
               "$SLOCK"
-              "$ST" )
+              "$ST" 
+              "$TABBED" )
+
 FILESTOREMOVE=( "blocks.h"
 		"patches.h"
 		"config.h" )
