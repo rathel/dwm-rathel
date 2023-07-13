@@ -28,7 +28,8 @@ shlock()            { _lock s; }   # obtain a shared lock
 unlock()            { _lock u; }   # drop a lock
 
 ### BEGIN OF SCRIPT ###
-
+$HOME/.screenlayout/layout.sh &
+sleep 5
 xrdb -merge ~/.Xresources &
 dwmblocks &
 #/home/rathel/.local/share/dwm/statusbar.sh &
@@ -55,7 +56,6 @@ pulseaudio &
 steam &
 lutris &
 spotify &
-$HOME/.screenlayout/layout.sh &
 
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1

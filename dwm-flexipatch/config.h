@@ -16,10 +16,10 @@ static const int swallowfloating         = 0;   /* 1 means swallow floating wind
 static int nomodbuttons                  = 1;   /* allow client mouse button bindings that have no modifier */
 #endif // NO_MOD_BUTTONS_PATCH
 #if VANITYGAPS_PATCH
-static const unsigned int gappih         = 20;  /* horiz inner gap between windows */
+static const unsigned int gappih         = 10;  /* horiz inner gap between windows */
 static const unsigned int gappiv         = 10;  /* vert inner gap between windows */
 static const unsigned int gappoh         = 10;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov         = 30;  /* vert outer gap between windows and screen edge */
+static const unsigned int gappov         = 10;  /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 #endif // VANITYGAPS_PATCH
 #if AUTOSTART_PATCH
@@ -834,6 +834,7 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "st", NULL };
+static const char *dmenusteam[]  = { "/home/rathel/.local/bin/dmenu_steam.sh", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -871,7 +872,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
 	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenucmd } },
+	{ MODKEY|ControlMask,           XK_s,          spawn,                  {.v = dmenusteam } },
 	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = termcmd } },
+	#if RIODRAW_PATCH
+	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
+	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
+	{ MODKEY,                       XK_s,          rioresize,              {0} },
+	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = termcmd } },
+        #endif //RIODRAW_PATCH
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
