@@ -35,12 +35,12 @@ dwmblocks &
 #/home/rathel/.local/share/dwm/statusbar.sh &
 #wal -R &
 #firefox-developer-edition &
-#kitty &
-st &
+kitty &
+#st &
 numlockx &
 #compton &
 picom &
-#nm-applet &
+nm-applet &
 #emacsclient -c -a emacs &
 #blueman-applet &
 #xinput disable "ETPS/2 Elantech Touchpad" &
@@ -54,7 +54,7 @@ xautolock -locker slock &
 variety &
 pulseaudio &
 steam &
-lutris &
+lutris lutris:rungameid/1 &
 spotify &
 
 # Simplest example is avoiding running multiple instances of script.
