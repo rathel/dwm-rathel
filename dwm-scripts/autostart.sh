@@ -48,14 +48,14 @@ nm-applet &
 #gmail &
 redshift &
 xautolock -locker slock &
-/usr/lib/polkit-kde-authentication-agent-1 &
+#/usr/lib/polkit-kde-authentication-agent-1 &
 #$HOME/.local/bin/Ferdi &
 #bluetoothctl power on &
 variety &
 pulseaudio &
-steam &
-lutris lutris:rungameid/1 &
-spotify &
+steam -silent &
+#lutris lutris:rungameid/1 &
+#spotify &
 
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1
