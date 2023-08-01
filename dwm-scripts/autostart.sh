@@ -48,6 +48,7 @@ nm-applet &
 #gmail &
 redshift &
 xautolock -locker slock &
+lxpolkit &
 #/usr/lib/polkit-kde-authentication-agent-1 &
 #$HOME/.local/bin/Ferdi &
 #bluetoothctl power on &
