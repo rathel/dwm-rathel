@@ -6,11 +6,13 @@ DWM=$D/dwm-flexipatch
 SLOCK=$D/slock-flexipatch
 ST=$D/st-flexipatch
 DWMBLOCKS=$D/dwmblocks
+DMENU=$D/dmenu-flexipatch
 DWMSCRIPTS=$D/dwm-scripts
 TABBED=$D/tabbed-flexipatch
 
 DIRECTORIES=( "$DWM"
               "$DWMBLOCKS"
+              "$DMENU"
               "$SLOCK"
               "$ST" 
               "$TABBED" )
@@ -35,15 +37,15 @@ if ! [ "$(find /usr/include/X11 -iname "xrandr.h")" ];then
     echo "Needs libXrandr"
     exit 1
 fi
-#
-#if ! [ "$(command -v kitty)" ];then
-#    echo "Needs Kitty Terminal"
-#    exit 1
-#fi
-#if ! [ "$(command -v dunst)" ];then
-#    echo "Needs dunst"
-#    exit 1
-#fi
+
+if ! [ "$(command -v kitty)" ];then
+    echo "Needs Kitty Terminal"
+    exit 1
+fi
+if ! [ "$(command -v dunst)" ];then
+    echo "Needs dunst"
+    exit 1
+fi
 
 BUILD(){
         echo "Running make..."
