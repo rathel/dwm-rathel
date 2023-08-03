@@ -6,38 +6,38 @@ BATT=$(cat /sys/class/power_supply/BAT0/capacity)
 
 if [ "$STATUS" = "Discharging" ]; then
     if [ "$BATT" -lt 101 ]; then
-        ICON=""
+        ICON="󰁹"
     fi
     if [ "$BATT" -lt 90 ]; then
-        ICON=""
+        ICON="󰂂"
     fi
     if [ "$BATT" -lt 80 ]; then
-        ICON=""
+        ICON="󰂁"
     fi
     if [ "$BATT" -lt 70 ]; then
-        ICON=""
+        ICON="󰂀"
     fi
     if [ "$BATT" -lt 60 ]; then
-        ICON=""
+        ICON="󰁿"
     fi
     if [ "$BATT" -lt 50 ]; then
-        ICON=""
+        ICON="󰁾"
     fi
     if [ "$BATT" -lt 40 ]; then
-        ICON=""
+        ICON="󰁽"
     fi
     if [ "$BATT" -lt 30 ]; then
-        ICON=""
+        ICON="󰁼"
     fi
     if [ "$BATT" -lt 20 ]; then
-        ICON=""
+        ICON="󰁻"
     fi
     if [ "$BATT" -lt 10 ]; then
-        ICON=""
+        ICON="󰁺"
     fi
 
 else
-    ICON=""
+    ICON="󰁹"
 fi
 
 echo "$ICON" "$BATT%"
