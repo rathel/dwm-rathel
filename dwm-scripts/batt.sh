@@ -27,7 +27,7 @@ if [ "$STATUS" = "Discharging" ]; then
         ICON="󰁽"
     fi
     if [ "$BATT" -lt 30 ]; then
-        ICON="󰁼"
+        ICON="\e[32mRed󰁼"
     fi
     if [ "$BATT" -lt 20 ]; then
         ICON="󰁻"
@@ -37,7 +37,7 @@ if [ "$STATUS" = "Discharging" ]; then
     fi
 
 else
-    ICON="󰁹"
+    ICON="󰂄"
 fi
 
-echo "$ICON" "$BATT%"
+echo -e "$ICON $BATT%"
