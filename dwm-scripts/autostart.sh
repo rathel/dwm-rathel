@@ -46,7 +46,7 @@ nm-applet &
 #xinput disable "ETPS/2 Elantech Touchpad" &
 #steam_chat &
 #gmail &
-redshift &
+redshift -l 24.78:-107.44 &
 xautolock -locker slock &
 lxpolkit &
 #/usr/lib/polkit-kde-authentication-agent-1 &
