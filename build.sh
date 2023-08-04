@@ -12,7 +12,7 @@ TABBED=$D/tabbed-flexipatch
 
 if [ "$(hostname)" == "debian-asusrog" ];then
     cd $DWMBLOCKS
-    cp -v blocks.def.h-asurog blocks.def.h
+    cp -v blocks.def.h-asusrog blocks.def.h
 else
     cd $DWMBLOCKS
     cp -v blocks.def.h-default blocks.def.h
