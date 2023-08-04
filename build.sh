@@ -10,6 +10,14 @@ DMENU=$D/dmenu-flexipatch
 DWMSCRIPTS=$D/dwm-scripts
 TABBED=$D/tabbed-flexipatch
 
+if [ "$(hostname)" == "debian-asusrog" ];then
+    cd $DWMBLOCKS
+    cp blocks.def.h-asurog blocks.def.h
+else
+    cd $DWMBLOCKS
+    cp blocks.def.h-default blocks.def.h
+fi
+
 DIRECTORIES=( "$DWM"
               "$DWMBLOCKS"
               "$DMENU"
