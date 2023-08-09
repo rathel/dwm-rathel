@@ -27,7 +27,7 @@ if [ "$STATUS" = "Discharging" ]; then
         ICON="󰁽"
     fi
     if [ "$BATT" -lt 30 ]; then
-        ICON="\e[32mRed󰁼"
+        ICON="󰁼"
     fi
     if [ "$BATT" -lt 20 ]; then
         ICON="󰁻"

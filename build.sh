@@ -125,5 +125,9 @@ if [[ $(fc-list) != *Jet* ]];then
 fi
 
 echo ""
+
+cd $DWMBLOCKS
+cp  blocks.def.h-default blocks.def.h
+
 echo "Done..."
 exit 0
