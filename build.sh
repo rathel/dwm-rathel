@@ -118,9 +118,19 @@ else
 	cp -vf $D/kitty.conf $HOME/.config/kitty/
 fi
 
-if [[ $(fc-list) != *Jet* ]]; then
-	wget -c https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip -O /tmp/JetBrainsMono.zip
-	unzip /tmp/JetBrainsMono.zip -d $HOME/.fonts
+if [ ! -d $HOME/.config/alacritty ]; then
+	echo "Making Alacritty Folder..."
+	mkdir -p $HOME/.config/alacritty
+	echo "Copying Alacritty config..."
+	cp -vf $D/alacritty.yml $HOME/.config/alacritty/
+else
+	echo "Copying Alacritty config..."
+	cp -vf $D/alacritty.yml $HOME/.config/alacritty/
+fi
+
+if [[ $(fc-list) != *Terminess* ]]; then
+	wget -c https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Terminus.zip -O /tmp/Terminus.zip
+	unzip /tmp/Terminus.zip -d $HOME/.fonts
 	fc-cache
 fi
 
