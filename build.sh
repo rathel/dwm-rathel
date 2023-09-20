@@ -46,10 +46,10 @@ if ! [ "$(find /usr/include/X11 -iname "xrandr.h")" ]; then
 	exit 1
 fi
 
-if ! [ "$(command -v kitty)" ]; then
-	echo "Needs Kitty Terminal"
-	exit 1
-fi
+#if ! [ "$(command -v kitty)" ]; then
+#	echo "Needs Kitty Terminal"
+#	exit 1
+#fi
 if ! [ "$(command -v dunst)" ]; then
 	echo "Needs dunst"
 	exit 1
