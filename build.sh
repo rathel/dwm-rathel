@@ -128,7 +128,7 @@ else
 	cp -vf $D/alacritty.yml $HOME/.config/alacritty/
 fi
 
-if [[ $(fc-list) != *Terminess* ]]; then
+if [[ $(fc-list) != *EnvyCodeR* ]]; then
 	wget -c https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Terminus.zip -O /tmp/Terminus.zip
 	unzip /tmp/Terminus.zip -d $HOME/.fonts
 	fc-cache
